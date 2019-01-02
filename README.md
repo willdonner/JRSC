@@ -1,5 +1,5 @@
-# JRSC
-使用今日诗词API实现Web端和PC端(Electron)
+# JRSC 
+使用今日诗词API实现Web端和PC端(Electron) 
 背景根据https://www.pexels.com 提供的图片随机变化
 
 PC
