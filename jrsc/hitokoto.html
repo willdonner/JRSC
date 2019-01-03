@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="hasimage()">
+    
+</body>
+<script>
+function hitokoto()
+    {    
+		console.log('hasimage')
+		
+		var random = Math.ceil(Math.random()*999);
+  		var imgurl = 'https://api.imjad.cn/hitokoto/?cat=&charset=utf-8&length=500&encode=&fun=sync&source=';
+        var xmlHttp ;
+        if (window.ActiveXObject)
+         {
+          xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+         }
+         else if (window.XMLHttpRequest)
+         {
+          xmlHttp = new XMLHttpRequest();
+         } 
+		 console.log(imgurl);
+        xmlHttp.open("Get",imgurl,false);
+        xmlHttp.send();
+        if(xmlHttp.status==404)
+        hasimage();
+        else
+        console.log(xmlHttp.responseText);
+        document.write(xmlHttp.responseText);
+    }
+</script>
+</html>
