@@ -293,6 +293,34 @@ setTimeout(hasimage,0);
   		var s = document.getElementsByTagName("script")[0];
   		s.parentNode.insertBefore(mta, s);
   	})();
+
+	  function hitokoto()
+    {
+  		var imgurl = 'https://api.imjad.cn/hitokoto/?cat=&charset=utf-8&length=500&encode=&fun=sync&source=';
+        var xmlHttp ;
+        if (window.ActiveXObject)
+         {
+          xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+         }
+         else if (window.XMLHttpRequest)
+         {
+          xmlHttp = new XMLHttpRequest();
+         }
+		 console.log(imgurl);
+        xmlHttp.open("Get",imgurl,false);
+        xmlHttp.send();
+        if(xmlHttp.status==404)
+        hasimage();
+        else
+        console.log(xmlHttp.responseText);
+		var foot = document.getElementById('foot');
+        foot.innerText= xmlHttp.responseText;
+    }
 </script>
 </body>
+<footer>
+	<div class="text-box" style='background-color: #fff;'>
+		<span id="foot" style="font-size: 30px;vertical-align: middle;line-height: normal; ">正在努力加载中.....</span>
+		</div>
+</footer>
 </html>

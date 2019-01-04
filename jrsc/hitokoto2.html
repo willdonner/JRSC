@@ -256,6 +256,7 @@ function update(imgurl) {
   console.log("imgurl");
   console.log(imgurl);
   document.getElementById("backimg").style.backgroundImage='url('+imgurl+')';
+  hitokoto();
   button.className = button.className + ' disabled'
   jinrishici.load(function(result) {
   	var sentence = document.getElementById('sentence');
@@ -277,9 +278,7 @@ function update(imgurl) {
   });
   return false;
 }
-// setTimeout(update, 0)
-// var random = Math.ceil(Math.random()*999);
-//   var imgurl = 'url(https://images.pexels.com/photos/414'+random+'/pexels-photo-414'+random+'.jpeg)';
+
 setTimeout(hasimage,0);
 </script>
 <script>
