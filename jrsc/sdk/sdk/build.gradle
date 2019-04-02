@@ -1,0 +1,20 @@
+apply plugin: 'com.android.library'
+
+android {
+	compileSdkVersion 28
+
+	defaultConfig {
+		minSdkVersion 18
+		targetSdkVersion 28
+		versionCode 1
+		versionName POM_VERSION
+	}
+}
+
+dependencies {
+	implementation 'com.android.support:appcompat-v7:28.0.0'
+	implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+	implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+}
+
+apply from: '../push.gradle'
