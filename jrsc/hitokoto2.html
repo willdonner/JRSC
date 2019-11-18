@@ -229,10 +229,17 @@ fitty(document.getElementById("sentence"),{"maxSize": 40})
 
 function hasimage()
     {    
-		console.log('hasimage')
-		
+		var imgurl ;
+		// console.log('hasimage')
+		var offsetwidth = document.body.offsetWidth;
+		// console.log(offsetwidth);
 		var random = Math.ceil(Math.random()*999);
-  		var imgurl = 'https://images.pexels.com/photos/414'+random+'/pexels-photo-414'+random+'.jpeg';
+		if(offsetwidth>500){
+			imgurl = 'https://images.pexels.com/photos/414'+random+'/pexels-photo-414'+random+'.jpeg?w='+offsetwidth;
+		}
+		else{
+			imgurl = 'https://images.pexels.com/photos/414'+random+'/pexels-photo-414'+random+'.jpeg?auto=compress&cs=tinysrgb&dpr=3&w='+500;
+		}
         var xmlHttp ;
         if (window.ActiveXObject)
          {
@@ -256,6 +263,8 @@ function update(imgurl) {
   console.log("imgurl");
   console.log(imgurl);
   document.getElementById("backimg").style.backgroundImage='url('+imgurl+')';
+//   document.getElementById('header').style; backimg.background = "url("+image[x]+") no-repeat center center"; 
+// document.getElementById("backimg").style.backgroundRepeat.normalize;
   hitokoto();
   button.className = button.className + ' disabled'
   jinrishici.load(function(result) {
